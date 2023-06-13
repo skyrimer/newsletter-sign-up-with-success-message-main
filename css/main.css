@@ -1,0 +1,239 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: system-ui;
+  line-height: 1;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+main {
+  min-height: 100vh;
+  background-color: var(--clr-white);
+}
+@media screen and (min-width: 40rem) {
+  main {
+    display: grid;
+    place-items: center;
+    width: min(100%, 830px);
+    margin-inline: auto;
+    background-color: transparent;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  background-color: var(--clr-charcoal-gray);
+  color: var(--clr-dark-slate-gray);
+}
+
+:root {
+  --clr-tomato: hsl(4, 100%, 67%);
+  --clr-dark-slate-gray: hsl(234, 29%, 20%);
+  --clr-charcoal-gray: hsl(235, 18%, 26%);
+  --clr-grey: hsl(231, 7%, 60%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+.subscription-card {
+  font-size: clamp(0.75rem, 1.8vw, 1rem);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 1.25em;
+  width: 100%;
+  background-color: var(--clr-white);
+  transition: opacity 0.6s ease-in-out;
+  overflow: hidden;
+}
+@media screen and (min-width: 40rem) {
+  .subscription-card {
+    flex-direction: row;
+    padding: 1.25em;
+    border-radius: 2em;
+  }
+}
+.subscription-card.submitted {
+  display: grid;
+  place-items: center;
+  max-width: 28rem;
+  padding: 3.5em;
+  min-height: 100vh;
+}
+@media screen and (min-width: 40rem) {
+  .subscription-card.submitted {
+    display: block;
+    min-height: unset;
+  }
+}
+.subscription-card.submitted .btn-primary {
+  align-self: flex-end;
+  margin-top: 2.5em;
+}
+.subscription-card [data-email] {
+  font-weight: 700;
+}
+.subscription-card .img-success {
+  margin-bottom: 2em;
+}
+.subscription-card.fade {
+  opacity: 0;
+}
+.subscription-card .card-details {
+  padding: 4em 2em;
+}
+.subscription-card .card-image img {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-image: url("/assets/images/icon-list.svg");
+  margin-bottom: 2em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+form label {
+  font-size: 0.8em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+form input[type=email] {
+  font-size: 1em;
+  border-radius: 0.5em;
+  padding: 1em;
+  border: 1px solid var(--clr-grey);
+  margin-bottom: 1em;
+  transition: border-color 0.3s ease-in-out;
+}
+form input[type=email]::-moz-placeholder {
+  color: var(--clr-grey);
+}
+form input[type=email]::placeholder {
+  color: var(--clr-grey);
+}
+form input[type=email]:focus, form input[type=email]:valid {
+  border-color: var(--clr-dark-slate-gray);
+}
+form.invalid::before {
+  content: "Valid email required";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.8em;
+  color: var(--clr-tomato);
+}
+form.invalid input[type=email] {
+  color: var(--clr-tomato);
+  border-color: var(--clr-tomato);
+}
+form.invalid input[type=email]::-moz-placeholder {
+  color: var(--clr-tomato);
+}
+form.invalid input[type=email]::placeholder {
+  color: var(--clr-tomato);
+}
+
+.btn-primary {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  font-size: 0.9rem;
+  color: var(--clr-white);
+  background-color: var(--clr-dark-slate-gray);
+  padding: 1.2em;
+  font-weight: 700;
+  border-radius: 0.5em;
+  isolation: isolate;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, hsl(346, 100%, 66%), var(--clr-tomato));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+.btn-primary:hover::after, .btn-primary:focus::after {
+  opacity: 1;
+}/*# sourceMappingURL=main.css.map */
